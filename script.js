@@ -2,7 +2,7 @@ const [fire, ...otherFire] = document.querySelectorAll('.fire');
 const title = document.querySelector('.title');
 
 title.addEventListener('mouseover', () => {
-  fire.innerHTML = 'Beatiful';
+  fire.innerHTML = 'Beautiful';
 });
 
 title.addEventListener('mouseout', () => {
@@ -18,8 +18,9 @@ const create_fire = () => {
   tempfire.innerHTML = "✨";
   tempfire.style.fontSize = '28px';
   tempfire.style.textAlign = 'center';
-  tempfire.style.position = 'fixed';
+  tempfire.style.position = 'absolute';
   tempfire.style.zIndex = '1';
+  tempfire.style.color = 'white';
   return tempfire;
 };
 
@@ -31,7 +32,7 @@ const animate_fire = (element) => {
   fire_div.style.left = `${left_position}px`;
   fire_div.style.top = `${top_position}px`;
   fire_div.style.animation = '1s ease-in-out 0s fire_anim forwards';
-  document.body.appendChild(fire_div);
+  element.appendChild(fire_div);
   setTimeout(self_destruct, 1000, fire_div);
 };
 
