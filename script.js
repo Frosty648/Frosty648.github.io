@@ -21,13 +21,14 @@ const create_fire = () => {
   tempfire.style.position = 'absolute';
   tempfire.style.zIndex = '1';
   tempfire.style.color = 'white';
+  tempfire.style.userSelect = 'none';
   return tempfire;
 };
 
 const animate_fire = (element) => {
   const rect = element.getBoundingClientRect();
-  const left_position = rect.right - 15 - Math.floor(Math.random() * Math.floor(rect.width));
-  const top_position = rect.bottom - 15 - Math.floor(Math.random() * Math.floor(rect.height));
+  const left_position = Math.floor(Math.random() * rect.width + 1) - 15;
+  const top_position = Math.floor(Math.random() * rect.height + 1) - 20;
   const fire_div = create_fire();
   fire_div.style.left = `${left_position}px`;
   fire_div.style.top = `${top_position}px`;

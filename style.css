@@ -64,6 +64,7 @@ p {
 }
 
 .fire {
+  position: relative;
   background: linear-gradient(to right, rgb(100, 0, 92) 0%, rgb(37, 26, 145) 50%, rgb(100, 0, 92) 100%);
   background-size: 200% 200%;
   background-clip: text;
@@ -99,7 +100,7 @@ p {
 }
 
 .button-border {
-  display: inline;
+  display: inline-block;
   margin: 10px;
   background-image: linear-gradient(to right, rgb(100, 0, 92) 0%, rgb(37, 26, 145) 50%, rgb(100, 0, 92) 100%);
   background-size: 200% 200%;
@@ -130,7 +131,7 @@ p {
   transition: 0.2s all ease-in-out;
 }
 
-.button:hover {
+.button-border:hover .button {
   background-size: 200% 200%;
 }
 
@@ -139,10 +140,8 @@ p {
   height: 100%;
   filter: brightness(0%) invert();
   transition: 0.2s all ease-in-out;
-}
-
-.button:hover img {
-  filter: brightness(0%);
+  user-select: none;
+  mix-blend-mode: difference;
 }
 
 .navbar {
