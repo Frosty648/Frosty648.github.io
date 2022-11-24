@@ -1,5 +1,8 @@
 const [fire, ...otherFire] = document.querySelectorAll('.fire');
 const title = document.querySelector('.title');
+const navbar = document.querySelector('.navbar');
+const expand_button = document.querySelector('.nav-btn');
+const invert_button = document.querySelector('#invert-btn');
 
 title.addEventListener('mouseover', () => {
   fire.innerHTML = 'Beautiful';
@@ -47,4 +50,19 @@ otherFire.forEach(f => {
     ),
     Math.floor(Math.random() * 201)
   );
+});
+
+expand_button.addEventListener('click', () => {
+  navbar.dataset.expanded = navbar.dataset.expanded == 'true' ? 'false' : 'true';
+});
+
+let inverted = false;
+invert_button.addEventListener('click', () => {
+  if (!inverted) {
+    document.documentElement.style.filter = 'invert()';
+    inverted = !inverted;
+  } else {
+    document.documentElement.style.filter = 'none';
+    inverted = !inverted;
+  }
 });
